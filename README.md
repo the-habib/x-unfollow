@@ -1,57 +1,90 @@
 ---
 
+````markdown
 # 🐦✨ Twitter Auto-Unfollower Helper
 
-Tired of manually unfollowing one account at a time?
-This little helper script is like your **tiny assistant** that clicks through the “Following → Unfollow → Confirm Unfollow” flow for you — one account at a time, nice and gentle 💕
+A tiny browser console script that helps you **unfollow accounts automatically** on Twitter/X.  
+It carefully goes through the flow:
+
+**Following → Unfollow → Confirm popup → Done ✅**
+
+All hands-free, one account at a time. 🎀
 
 ---
 
 ## 🌸 Features
-
-* **Fully hands-free**: it hovers, clicks, confirms, and moves on
-* **One-by-one unfollow**: respects the flow, doesn’t skip steps
-* **Auto-scroll**: loads more accounts as it goes down your Following page
-* **Safety first**: customizable delays so you don’t get rate-limited
-* **Controls**: stop anytime or set a max limit per run
+- ✅ **Fully hands-free** — hover, click, confirm, repeat  
+- 🐢 **Safe pace** — adds delays between actions to avoid rate-limits  
+- 🔄 **Auto-scroll** — loads more accounts as you scroll down  
+- 🎛 **Controls** — stop anytime or set a max unfollow limit  
 
 ---
 
 ## 🛠 How to Use
 
-1. Go to your **Following page** on Twitter/X:
+1. Go to your **Following page** on Twitter/X:  
    👉 `https://twitter.com/YOURUSERNAME/following`
 
-2. Open your browser’s **DevTools Console**
+2. Open your browser’s **DevTools Console**  
+   - Chrome/Edge → `Ctrl+Shift+J` (Win/Linux) or `Cmd+Opt+J` (Mac)  
+   - Firefox → `Ctrl+Shift+K` (Win/Linux) or `Cmd+Opt+K` (Mac)
 
-   * Chrome/Edge: `Ctrl+Shift+J` (Win/Linux) or `Cmd+Opt+J` (Mac)
-   * Firefox: `Ctrl+Shift+K` (Win/Linux) or `Cmd+Opt+K` (Mac)
+3. Copy–paste the script into the console and press **Enter**
 
-3. Copy-paste the whole script into the console and hit **Enter**
-
-4. Sit back and watch your tiny helper do the job 🐣
+4. Watch the magic happen 💫
 
 ---
 
 ## 🎛 Controls
 
-While the script is running, you can type into the console:
+While the script is running, you can type these into the console:
 
-* `stopAutoUnfollow()` → 🛑 Stops the script immediately
-* `setUnfollowLimit(50)` → 📉 Stop automatically after 50 unfollows
+```js
+stopAutoUnfollow()      // 🛑 Stops the script immediately
+setUnfollowLimit(50)    // 📉 Stop automatically after 50 unfollows
+````
+
+---
+
+## ⚙️ Configuration
+
+Inside the script, you can tweak:
+
+```js
+const delayBetween = 3000;     // ms between each unfollow (default: 3s)
+const hoverTime = 600;         // ms to hover before showing "Unfollow"
+const popupWait = 900;         // ms to wait for popup to render
+const postConfirmWait = 1200;  // ms after confirming before next
+```
 
 ---
 
 ## ⚠️ Notes
 
-* Default pace = **1 unfollow every 3 seconds**. You can increase this (e.g., 5 seconds) if you’re worried about limits.
-* The script is polite — it only acts when a **“Following”** button is present, confirms the popup, then waits before moving on.
-* Please remember: **use responsibly**! Bulk automation can trigger Twitter limits or break terms of service.
+* Default pace = **1 unfollow every 3 seconds**.
+* Increase delay if you get rate-limited.
+* Works only on the **Following page**.
+* Please use responsibly 💖. Automating actions may be against Twitter/X terms of service.
 
 ---
 
-✨ That’s it! Enjoy your decluttered Following list with zero finger strain 💖
+## 🌼 Example Run
+
+```log
+[AutoUnfollow] Starting…
+✅ Unfollowed 1
+✅ Unfollowed 2
+✅ Unfollowed 3
+No more visible accounts. Scrolling…
+✅ Unfollowed 4
+...
+```
 
 ---
 
-Would you like me to make this doc look like a **GitHub-style README** (with code blocks, headers, emojis, etc.), so you can just drop it into a repo?
+## 💖 Credits
+
+Made with ☕ and ✨ for anyone who wants a clutter-free Following list.
+Enjoy your decluttered timeline 🎀
+
+```
